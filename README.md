@@ -52,8 +52,13 @@ COSC-3337-Project/
 ## 🚀 Getting Started
 
 ### 1. Environment Setup
+
+**Prerequisites:**
+- Python 3.13.1 or higher (required for all dependencies to work correctly)
+
 Create a virtual environment and install dependencies:
 ```bash
+python --version  # Verify you have Python 3.13.1+
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt

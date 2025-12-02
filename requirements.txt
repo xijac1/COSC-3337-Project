@@ -1,3 +1,6 @@
+# Python 3.13.1+ required
+# All packages below are tested with Python 3.13.1
+
 pandas
 numpy
 scikit-learn
@@ -12,3 +15,4 @@ xgboost
 nltk
 spacy
 jupyter
+tqdm
