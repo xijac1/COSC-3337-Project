@@ -13,19 +13,24 @@ This project aims to understand the evolution of computer science research using
 | **Ai Nhien To** | Networks & Metrics | Graph Construction, Centrality/Community Computation, Temporal Slicing, Influence Trajectories |
 | **Julio Amaya** | NLP & Modeling | Text Cleaning, Topic Modeling (TF-IDF/LDA), Trend Analysis, Predictive Modeling (Citation Impact) |
 
-## 📂 Project Structure (Guideline Map)
+## 📂 Project Structure
 
 ```
 COSC-3337-Project/
 ├── data/
-│   ├── raw/                  # Place dblp-ref-*.json shards here
-│   └── processed/            # Output Parquet files (papers, authorships, citations)
-├── notebooks/                # Jupyter Notebooks for Analysis & EDA
-│   ├── 01_eda.ipynb          # Exploratory Data Analysis (Shared)
-│   ├── 02_network_analysis.ipynb # Network metrics & graphs (Ai Nhien)
-│   ├── 03_topic_modeling.ipynb   # Topic modeling & trends (Julio)
-│   ├── 04_predictive_modeling.ipynb # Classification & Prediction (Julio)
-│   └── 05_anomaly_detection.ipynb # Outlier detection
+│   ├── raw/                  # Raw DBLP JSON shards (not committed)
+│   └── parquet/              # ✅ Cleaned Parquet datasets
+│       ├── papers/           # ✅ Core publication metadata
+│       ├── authorships/      # ✅ Author-paper relationships
+│       ├── citations/        # ✅ Citation network edges
+│       └── coauthorships/    # ✅ Coauthor collaboration edges
+├── notebooks/                # Jupyter Notebooks for Analysis
+│   ├── 01_data_engineering_etl.ipynb      # ✅ ETL Pipeline (Truc)
+│   ├── 02_data_profiling_analysis.ipynb   # ✅ Data Profiling (Truc)
+│   ├── 03_network_analysis.ipynb          # Network metrics & graphs (Ai Nhien)
+│   ├── 04_predictive_modeling.ipynb       # Predictive modeling (Julio)
+│   ├── 05_anomaly_detection.ipynb         # Anomaly detection
+│   └── 06_topic_modeling.ipynb            # Topic modeling (Julio)
 ├── src/                      # Source Code Modules
 │   ├── etl/                  # Data Engineering (Truc)
 │   │   ├── ingestion.py      # JSON streaming & parsing
@@ -38,6 +43,8 @@ COSC-3337-Project/
 │   │   └── models.py         # LDA, Classifiers (LogReg, XGBoost)
 │   └── utils/                # Shared utilities
 │       └── config.py         # Paths and constants
+├── docs/
+│   └── data_dictionary.md    # ✅ Comprehensive data documentation
 ├── requirements.txt          # Python dependencies
 └── README.md                 # Project Documentation
 ```
@@ -52,34 +59,52 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 2. Data Ingestion (Truc)
-Place the DBLP JSON shards in `data/raw/`. Run the ETL pipeline to generate Parquet files:
-```bash
-python src/etl/ingestion.py
-```
+### 2. Data Processing ✅ COMPLETED
+The ETL pipeline has been successfully executed. All cleaned datasets are available in `data/parquet/`:
+- ✅ Papers metadata with 9 columns
+- ✅ Authorships with normalized author names
+- ✅ Citations network edges
+- ✅ Coauthorships network edges
+
+See `docs/data_dictionary.md` for detailed schema documentation.
 
 ### 3. Analysis Workflow
-- **EDA**: Run `notebooks/01_eda.ipynb` to visualize distributions.
-- **Networks**: Use `src/networks/` modules in `notebooks/02_network_analysis.ipynb`.
-- **NLP/ML**: Use `src/nlp_modeling/` modules in `notebooks/03_topic_modeling.ipynb` and `04_predictive_modeling.ipynb`.
+- **Data Profiling**: Review `notebooks/02_data_profiling_analysis.ipynb` for dataset statistics
+- **Networks**: Use `notebooks/03_network_analysis.ipynb` for graph analysis (Ai Nhien)
+- **NLP/ML**: Use `notebooks/04_predictive_modeling.ipynb` and `06_topic_modeling.ipynb` (Julio)
 
-## ✅ Key Tasks & Roadmap
+## ✅ Project Progress & Roadmap
 
-### Phase 1: Data Engineering (Truc)
-- [ ] Implement chunked stream-parsing for JSON shards.
-- [ ] Clean data: Drop missing IDs, normalize venues, handle missing abstracts.
-- [ ] Export to Parquet: `papers.parquet`, `authorships.parquet`, `citations.parquet`.
+### Phase 1: Data Engineering (Truc) ✅ COMPLETED
+- [x] Implement chunked stream-parsing for JSON shards
+- [x] Clean data: Drop missing IDs, normalize venues, handle missing abstracts
+- [x] Build citation network edges (directed graph)
+- [x] Build coauthorship network edges (undirected graph)
+- [x] Export to Parquet: `papers`, `authorships`, `citations`, `coauthorships`
+- [x] Create comprehensive data dictionary (377 lines)
+- [x] Data profiling and quality analysis notebook
+- [x] Schema normalization with author name standardization
 
-### Phase 2: Network Analysis (Nhien)
-- [ ] Build Citation Graph (Directed) & Co-authorship Graph (Undirected).
-- [ ] Compute Centralities: Degree, PageRank, Betweenness.
-- [ ] Detect Communities (Louvain) and track temporal evolution.
+**Deliverables:**
+- ✅ 4 cleaned Parquet tables (partitioned for scalability)
+- ✅ Complete data dictionary with schema documentation
+- ✅ ETL notebook with reproducible pipeline
+- ✅ Data profiling notebook with statistical summaries
 
-### Phase 3: NLP & Modeling (Julio)
-- [ ] Text Features: TF-IDF (10K features) -> PCA.
-- [ ] Topic Modeling: LDA/NMF to identify subfields.
-- [ ] Predictive Task: Forecast citation impact (Pre-2010 train / Post-2010 test).
+### Phase 2: Network Analysis (Nhien) 
+- [ ] Build Citation Graph (Directed) & Co-authorship Graph (Undirected)
+- [ ] Compute Centralities: Degree, PageRank, Betweenness
+- [ ] Detect Communities (Louvain) and track temporal evolution
+- [ ] Generate network visualizations and metrics tables
 
-### Phase 4: Integration & Reporting (All)
-- [ ] Combine features into a master dataset.
-- [ ] Finalize visualizations and report.
+### Phase 3: NLP & Modeling (Julio) 
+- [ ] Text Features: TF-IDF (10K features) -> PCA
+- [ ] Topic Modeling: LDA/NMF to identify subfields
+- [ ] Predictive Task: Forecast citation impact (Pre-2010 train / Post-2010 test)
+- [ ] Anomaly detection in publications and collaborations
+
+### Phase 4: Integration & Reporting (All) 
+- [ ] Combine insights from all analyses
+- [ ] Create publication-ready figures and tables
+- [ ] Write final report with findings and recommendations
+- [ ] Prepare presentation materials
