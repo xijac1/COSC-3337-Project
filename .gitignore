@@ -1,0 +1,2 @@
+data/parquet/**/*.parquet
+dblp-ref/
