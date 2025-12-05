@@ -64,6 +64,11 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+If you encounter a `ModuleNotFoundError` for `networkx`, install it manually:
+```bash
+pip install networkx
+```
+
 ### 2. Data Processing ✅ COMPLETED
 The ETL pipeline has been successfully executed. All cleaned datasets are available in `data/parquet/`:
 - ✅ Papers metadata with 9 columns
@@ -97,10 +102,10 @@ See `docs/data_dictionary.md` for detailed schema documentation.
 - ✅ Data profiling notebook with statistical summaries
 
 ### Phase 2: Network Analysis (Nhien) 
-- [ ] Build Citation Graph (Directed) & Co-authorship Graph (Undirected)
-- [ ] Compute Centralities: Degree, PageRank, Betweenness
-- [ ] Detect Communities (Louvain) and track temporal evolution
-- [ ] Generate network visualizations and metrics tables
+- [x] Build Citation Graph (Directed) & Co-authorship Graph (Undirected)
+- [x] Compute Centralities: Degree, PageRank, Betweenness
+- [x] Detect Communities (Louvain) and track temporal evolution
+- [x] Generate network visualizations and metrics tables
 
 ### Phase 3: NLP & Modeling (Julio) 
 - [ ] Text Features: TF-IDF (10K features) -> PCA
