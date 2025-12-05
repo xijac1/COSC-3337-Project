@@ -1,0 +1,57 @@
+feature,importance
+ref_count,0.351369880874214
+year,0.11707040855099361
+topic,0.1139781505416492
+paper_age,0.11264550757288054
+author_count,0.1009184983066347
+venue_,0.03607966534767592
+venue_international conference on computers in education,0.03507866247537814
+venue_international joint conference on artificial intelligence,0.03228431463729159
+venue_Journal of Machine Vision and Applications,0.02141264792659641
+venue_national conference on artificial intelligence,0.016665153373692804
+venue_conference of the international speech communication association,0.00730862766937107
+venue_OTHER,0.006434653224240997
+venue_Annales Des Télécommunications,0.004749484937039274
+venue_Annals of Operations Research,0.0035294343390152266
+venue_european conference on artificial intelligence,0.0030124743941017103
+venue_the florida ai research society,0.002752540768452325
+venue_international symposium on neural networks,0.002752012063180267
+venue_knowledge discovery and data mining,0.002524365818991826
+venue_Computing,0.002349778051895544
+venue_Wirtschaftsinformatik \/ Angewandte Informatik,0.001948268046207135
+venue_european conference on parallel processing,0.0018817923714774783
+venue_international conference on intelligent computing,0.0018288508641582624
+venue_Lecture Notes in Computer Science,0.0016851697682555122
+venue_Computing and Informatics \/ Computers and Artificial Intelligence,0.001584152520356078
+venue_Journal of Information Science and Engineering,0.001568771058642865
+venue_the european symposium on artificial neural networks,0.0015328124702475476
+venue_genetic and evolutionary computation conference,0.0015004689500628706
+venue_medical image computing and computer assisted intervention,0.0013874863171261628
+venue_Journal of Universal Computer Science,0.0012317576983633567
+venue_international semantic web conference,0.001051685436566662
+venue_international conference on human computer interaction,0.0009786870718971876
+venue_european conference on information retrieval,0.0008423558242371328
+venue_international conference on artificial neural networks,0.0008092324945320742
+venue_artificial intelligence in education,0.0008051422354879459
+venue_international symposium on visual computing,0.0007508984522430702
+venue_formal methods,0.0005942417778056868
+venue_international conference on computational science and its applications,0.0005087347349057577
+venue_international conference on computational linguistics,0.0005019461330903673
+venue_Communications of The Ais,0.0005010526572972718
+venue_international conference on intelligent robotics and applications,0.0004974345781712399
+venue_adaptive agents and multi agents systems,0.00044720676933369285
+venue_international conference on information systems,0.00042618657928077716
+venue_european conference on principles of data mining and knowledge discovery,0.00037977271959620994
+venue_european conference on computer vision,0.00033893389213240867
+venue_international conference on artificial intelligence and soft computing,0.0002918036652222328
+venue_international conference on neural information processing,0.0002662275790848761
+venue_international conference on human-computer interaction,0.00021920674479175608
+venue_international world wide web conferences,0.0001992186628697973
+venue_international conference on computer vision,0.00014015878466833813
+venue_hybrid artificial intelligence systems,0.00012410306867183712
+venue_international conference on image analysis and recognition,0.00012039516939569875
+venue_artificial intelligence and computational intelligence,0.00011271391544866047
+venue_conference on multimedia modeling,2.6870115076927342e-05
+venue_international conference on swarm intelligence,0.0
+venue_international conference on computational collective intelligence,0.0
+venue_asian conference on intelligent information and database systems,0.0
