@@ -1,2 +1,7 @@
 dblp-ref/
-data/parquet/**/*.parquet
+data/parquet/
+models/papers_with_topics.csv
+
+# macOS system files
+.DS_Store
+**/.DS_Store
