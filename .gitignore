@@ -1,2 +1,3 @@
 dblp-ref/
 data/parquet/
+models/papers_with_topics.csv
