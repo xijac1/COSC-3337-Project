@@ -17,3 +17,9 @@ nltk
 spacy
 jupyter
 tqdm
+
+# GPU Acceleration (Optional)
+# For XGBoost GPU support, ensure CUDA toolkit is installed
+# For RAPIDS GPU support (cuDF, cuML), install via conda:
+#   conda install -c rapidsai -c conda-forge -c nvidia rapids python=3.11 cudatoolkit=11.8
+# Note: RAPIDS may not be compatible with Python 3.13, use Python 3.11 for full GPU support
