@@ -19,14 +19,14 @@ This project aims to understand the evolution of computer science research using
 COSC-3337-Project/
 ├── data/
 │   ├── raw/                  # Raw DBLP JSON shards (not committed)
-│   └── parquet/              # ✅ Cleaned Parquet datasets
-│       ├── papers/           # ✅ Core publication metadata
-│       ├── authorships/      # ✅ Author-paper relationships
-│       ├── citations/        # ✅ Citation network edges
-│       └── coauthorships/    # ✅ Coauthor collaboration edges
+│   └── parquet/              # Cleaned Parquet datasets
+│       ├── papers/           # Core publication metadata
+│       ├── authorships/      # Author-paper relationships
+│       ├── citations/        # Citation network edges
+│       └── coauthorships/    # Coauthor collaboration edges
 ├── notebooks/                # Jupyter Notebooks for Analysis
-│   ├── 01_data_engineering_etl.ipynb      # ✅ ETL Pipeline (Truc)
-│   ├── 02_data_profiling_analysis.ipynb   # ✅ Data Profiling (Truc)
+│   ├── 01_data_engineering_etl.ipynb      # ETL Pipeline (Truc)
+│   ├── 02_data_profiling_analysis.ipynb   # Data Profiling (Truc)
 │   ├── 03_network_analysis.ipynb          # Network metrics & graphs (Ai Nhien)
 │   ├── 04_predictive_modeling.ipynb       # Predictive modeling (Julio)
 │   ├── 05_anomaly_detection.ipynb         # Anomaly detection
@@ -44,7 +44,7 @@ COSC-3337-Project/
 │   └── utils/                # Shared utilities
 │       └── config.py         # Paths and constants
 ├── docs/
-│   └── data_dictionary.md    # ✅ Comprehensive data documentation
+│   └── data_dictionary.md    # Comprehensive data documentation
 ├── requirements.txt          # Python dependencies
 └── README.md                 # Project Documentation
 ```
@@ -64,12 +64,17 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 2. Data Processing ✅ COMPLETED
+If you encounter a `ModuleNotFoundError` for `networkx`, install it manually:
+```bash
+pip install networkx
+```
+
+### 2. Data Processing 
 The ETL pipeline has been successfully executed. All cleaned datasets are available in `data/parquet/`:
-- ✅ Papers metadata with 9 columns
-- ✅ Authorships with normalized author names
-- ✅ Citations network edges
-- ✅ Coauthorships network edges
+- Papers metadata with 9 columns
+- Authorships with normalized author names
+- Citations network edges
+- Coauthorships network edges
 
 See `docs/data_dictionary.md` for detailed schema documentation.
 
@@ -78,9 +83,9 @@ See `docs/data_dictionary.md` for detailed schema documentation.
 - **Networks**: Use `notebooks/03_network_analysis.ipynb` for graph analysis (Ai Nhien)
 - **NLP/ML**: Use `notebooks/04_predictive_modeling.ipynb` and `06_topic_modeling.ipynb` (Julio)
 
-## ✅ Project Progress & Roadmap
+## Project Progress & Roadmap
 
-### Phase 1: Data Engineering (Truc) ✅ COMPLETED
+### Phase 1: Data Engineering (Truc) 
 - [x] Implement chunked stream-parsing for JSON shards
 - [x] Clean data: Drop missing IDs, normalize venues, handle missing abstracts
 - [x] Build citation network edges (directed graph)
@@ -90,17 +95,11 @@ See `docs/data_dictionary.md` for detailed schema documentation.
 - [x] Data profiling and quality analysis notebook
 - [x] Schema normalization with author name standardization
 
-**Deliverables:**
-- ✅ 4 cleaned Parquet tables (partitioned for scalability)
-- ✅ Complete data dictionary with schema documentation
-- ✅ ETL notebook with reproducible pipeline
-- ✅ Data profiling notebook with statistical summaries
-
 ### Phase 2: Network Analysis (Nhien) 
-- [ ] Build Citation Graph (Directed) & Co-authorship Graph (Undirected)
-- [ ] Compute Centralities: Degree, PageRank, Betweenness
-- [ ] Detect Communities (Louvain) and track temporal evolution
-- [ ] Generate network visualizations and metrics tables
+- [x] Build Citation Graph (Directed) & Co-authorship Graph (Undirected)
+- [x] Compute Centralities: Degree, PageRank, Betweenness
+- [x] Detect Communities (Louvain) and track temporal evolution
+- [x] Generate network visualizations and metrics tables
 
 ### Phase 3: NLP & Modeling (Julio) 
 - [ ] Text Features: TF-IDF (10K features) -> PCA
